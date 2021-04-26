@@ -1,0 +1,5 @@
+<h2><%= @category.name %></h2>
+
+<% @category.shops.each do |shop| %>
+  <%= link_to shop.name, shop %>
+<% end %>

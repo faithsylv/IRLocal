@@ -1,0 +1,55 @@
+<%= form_for @shop, :html => {:class => 'form shop'} do |f| %>
+  <table>
+
+  <tr>
+    <td><%= f.label :name %>
+    <td><%= f.text_field :name, :class => "form_input shop" %>
+  </tr>
+
+  <tr>
+    <td><%= f.label :logo %></td>
+    <td><%= f.text_field :logo,:class => "form_input shop"  %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :tagline %></td>
+    <td><%= f.text_field :tagline, :class => "form_input shop" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_area :description, :class => "form_input shop text_area" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :founders %></td>
+    <td><%= f.text_field :founders, :class => "form_input shop" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :established %></td>
+    <td><%= f.number_field :established, :class => "form_input shop" %></td>
+  </tr>
+
+    <tr>
+      <td><%= f.label :website %></td>
+      <td><%= f.url_field :website, :class => "form_input shop" %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :image%></td>
+      <td><%= f.text_field :image, :class => "form_input shop" %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :address%></td>
+      <td><%= f.text_field :address, :class => "form_input shop" %></td>
+    </tr>
+
+  </table>
+
+  <div class = 'submit shop'>
+    <%= f.submit button_text %>
+  </div>
+
+<% end %>

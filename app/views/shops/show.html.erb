@@ -1,0 +1,14 @@
+<h2><%= @shop.name %></h2>
+
+<h3><%= @shop.tagline %></h3>
+
+<p><%= @shop.website %></p>
+
+<% @shop.categories.each do |category|  %>
+  <%= link_to category.name, category %>
+<% end %>
+
+<div class = 'controls'>
+  <%= link_to 'Edit Shop', edit_shop_path %>
+  <%= link_to 'Remove Shop', @shop, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>
