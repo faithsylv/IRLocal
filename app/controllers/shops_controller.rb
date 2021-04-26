@@ -9,6 +9,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @categories = Category.all
   end
 
   def create
@@ -34,7 +35,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :logo, :tagline, :description, :founders, :established, :website, :image, :address)
+    params.require(:shop).permit(:name, :logo, :tagline, :description, :founders, :established, :website, :image, :address, :category_ids => [])
   end
 
 end

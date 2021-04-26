@@ -27,7 +27,6 @@ puts "#{Category.count} categories created"
 
 #Associations#########################################################################
 
-s1 << c2
-s2 << c4
-s3 << c3
-s4 << c4
+c2.shops << s1
+c3.shops << s3
+c4.shops << s2 << s4
