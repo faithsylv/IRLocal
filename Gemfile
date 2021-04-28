@@ -42,8 +42,11 @@ gem 'geocoder'
 #use Rails variables in JS
 gem 'gon'
 
-#autofill address in form field
-gem 'addressfinder'
+#get Rails paths for JS
+gem "js-routes"
+
+#add cloudinary for image upload
+gem 'cloudinary'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

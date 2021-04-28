@@ -63,3 +63,15 @@ a:hover {
 .home_search {
   margin-bottom: 50px;
 }
+
+.labels {
+     margin-top:-3px;
+     padding: 5px;
+     position: absolute;
+    visibility: visible;
+    z-index: 1030;
+}
+
+.labels:hover {
+    background-color: yellow;
+}

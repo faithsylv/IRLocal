@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require js-routes
 //= require_tree .
