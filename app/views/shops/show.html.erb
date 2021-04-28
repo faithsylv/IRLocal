@@ -4,6 +4,8 @@
 
 <p><%= @shop.website %></p>
 
+<p><%= @shop.address %></p>
+
 <h3>Goods Sold:</h3>
 <% @shop.categories.each do |category|  %>
   <%= link_to category.name, category %>

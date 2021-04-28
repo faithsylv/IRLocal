@@ -33,11 +33,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'jquery-rails'
 
-#allow multi-search of databas
+#allow multi-search of database - can add feature at later stage, not currently incorporated
 gem 'pg_search'
 
 #geocoder to get lat and long of user and shops
 gem 'geocoder'
+
+#use Rails variables in JS
+gem 'gon'
+
+#autofill address in form field
+gem 'addressfinder'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

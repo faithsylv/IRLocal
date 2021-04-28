@@ -15,13 +15,27 @@
      map = new google.maps.Map(document.getElementById('map'), {
        center: {lat: -33.88, lng: 151.20},
        zoom: 12
+       
      });
-     new google.maps.Marker({
-      position: {lat: -33.91, lng: 151.27 },
-      map,
-      title: "Hello World!",
-  });
+
+    let shop;
+    const shop_array = gon.shops;
+    for (i=0; i < shop_array.length; i++){
+      shop = shop_array[i];
+      if (shop.latitude === shop.longitude) continue;
+      const m = new google.maps.Marker({
+       position: {lat: +shop.latitude, lng: +shop.longitude },
+       map,
+       url: shop.website,
+       title: shop.name,
+      });
+    }
    }
+
+   google.maps.event.addListener(m, 'click', function() {
+     window.location.href = m.url;
+   });
+
  </script>
 
  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&callback=initMap"></script>

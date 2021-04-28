@@ -1,3 +1,20 @@
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_API_KEY"] %>&libraries=places&callback=initAutocomplete">
+</script>
+
+<script>
+  let autocomplete;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+    document.getElementById('autocomplete'),
+    {
+      types: ['address'], <%# change to establishment if want to search places%>
+      componentRestrictions: {'country': ['AU']},
+      fields: ['place_id', 'geometry', 'name']
+    });
+  }
+</script>
+
 <%= form_for @shop, :html => {:class => 'form shop'} do |f| %>
   <table>
 
@@ -43,7 +60,7 @@
 
     <tr>
       <td><%= f.label :address %></td>
-      <td><%= f.text_field :address, :class => "form_input shop" %></td>
+      <td><%= f.text_field :address, :class => "form_input shop", :id => 'autocomplete', :placeholder => 'Enter Address' %></td>
     </tr>
 
     <tr>

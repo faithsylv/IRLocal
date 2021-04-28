@@ -17,10 +17,13 @@ class PagesController < ApplicationController
         @header = "Stores:"
         @shops = Shop.where("name ilike ?", "%#{name}%")
       else
-        @return_text = "Sorry, we couldn't find your a store that sells that category or brand."
+        @return_text = "Sorry, we couldn't find a store that sells that category or brand."
         @shops = Shop.all
       end
     end
+
+    gon.shops = @shops
+
   end
 
 end
