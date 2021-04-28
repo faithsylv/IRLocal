@@ -1,3 +1,7 @@
+body {
+text-align: center;
+}
+
 .form_input {
 float: right;
 margin-left: 20px;
@@ -21,6 +25,41 @@ width: 145px;
   text-align: center;
 }
 
-.category {
+.index {
   display: block;
+}
+
+.home_logo {
+  width: 75px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+.main_nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+    text-align: center;
+    margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: brown;
+}
+
+a:hover {
+  color: green;
+}
+
+#map {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.home_search {
+  margin-bottom: 50px;
 }

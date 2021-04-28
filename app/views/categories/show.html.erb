@@ -1,5 +1,12 @@
 <h2><%= @category.name %></h2>
 
+Shops:
 <% @category.shops.each do |shop| %>
   <%= link_to shop.name, shop %>
 <% end %>
+
+<h3>Controls</h3>
+<div class = 'controls'>
+  <%= link_to 'Edit Category', edit_category_path %>
+  <%= link_to 'Remove Category', @category, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

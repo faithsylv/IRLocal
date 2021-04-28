@@ -5,11 +5,12 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find params[:id]
+    @latitude = @shop.latitude
+    @longitude = @shop.longitude
   end
 
   def new
     @shop = Shop.new
-    @categories = Category.all
   end
 
   def create
@@ -35,7 +36,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :logo, :tagline, :description, :founders, :established, :website, :image, :address, :category_ids => [])
+    params.require(:shop).permit(:name, :logo, :tagline, :description, :founders, :established, :website, :image, :address, :category_ids => [], :brand_ids => [])
   end
 
 end

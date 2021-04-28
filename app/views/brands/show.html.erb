@@ -1,0 +1,12 @@
+<h2><%= @brand.name %></h2>
+
+<h3>Shops:</h3>
+<% @brand.shops.each do |shop| %>
+  <%= link_to shop.name, shop %>
+<% end %>
+
+<h3>Controls</h3>
+<div class = 'controls'>
+  <%= link_to 'Edit Brand', edit_brand_path %>
+  <%= link_to 'Remove Brand', @brand, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
+</div>

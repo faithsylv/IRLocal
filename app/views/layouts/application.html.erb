@@ -5,14 +5,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
-    <%= link_to 'Our Shops', shops_path %>
-    <%= link_to 'Add a Shop', new_shop_path %>
-    <%= link_to 'All Categories', categories_path %>
+    <div class = 'header'>
+      <%= link_to (image_tag '/assets/icon.png', :class =>'home_logo'), root_path %>
+
+      <nav class = 'main_nav'>
+        <%= link_to 'Our Shops', shops_path %>
+        <%= link_to 'All Categories', categories_path %>
+        <%= link_to 'All Brands', brands_path %>
+        <%= link_to 'Add a Shop', new_shop_path %>
+        <%= link_to 'Add a Category', new_category_path %>
+        <%= link_to 'Add a Brand', new_brand_path %>
+      </nav>
+    </div>
+
     <%= yield %>
   </body>
 </html>

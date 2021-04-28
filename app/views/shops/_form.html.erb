@@ -37,18 +37,23 @@
     </tr>
 
     <tr>
-      <td><%= f.label :image%></td>
+      <td><%= f.label :image %></td>
       <td><%= f.text_field :image, :class => "form_input shop" %></td>
     </tr>
 
     <tr>
-      <td><%= f.label :address%></td>
+      <td><%= f.label :address %></td>
       <td><%= f.text_field :address, :class => "form_input shop" %></td>
     </tr>
 
     <tr>
       <td><%= f.label :category %></td>
       <td><%= f.collection_check_boxes :category_ids, Category.all, :id, :name %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :brand %></td>
+      <td><%= f.collection_check_boxes :brand_ids, Brand.all, :id, :name %></td>
     </tr>
 
   </table>

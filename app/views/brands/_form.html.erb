@@ -1,0 +1,33 @@
+<%= form_for @brand, :html => {:class => 'form brand'} do |f|%>
+
+<table>
+
+  <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name, :class => "form_input brand" %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :image %></td>
+    <td><%= f.text_field :image, :class => "form_input brand" %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :logo %></td>
+    <td><%= f.text_field :logo, :class => "form_input brand" %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :description %></td>
+    <td><%= f.text_area :description, :class => "form_input brand text_area" %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :established %></td>
+    <td><%= f.number_field :established, :class => "form_input brand" %></td>
+  </tr>
+
+</table>
+
+<div class = 'submit brand'>
+  <%= f.submit %>
+</div>
+
+<% end %>

@@ -1,8 +1,6 @@
-class PagesController < ApplicationController
-  def home
-  end
+class SearchController < ApplicationController
 
-  def search
+  def index
     if params[:query].present?
       name = params[:query]
       if Brand.where("name ilike ?", "%#{name}%").present?
@@ -22,5 +20,4 @@ class PagesController < ApplicationController
       end
     end
   end
-
 end

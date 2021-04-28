@@ -4,11 +4,21 @@
 
 <p><%= @shop.website %></p>
 
+<h3>Goods Sold:</h3>
 <% @shop.categories.each do |category|  %>
   <%= link_to category.name, category %>
 <% end %>
 
+<h3>Brands Sold:</h3>
+<% @shop.brands.each do |brand|  %>
+  <%= link_to brand.name, brand %>
+<% end %>
+
+<h3>Controls</h3>
 <div class = 'controls'>
   <%= link_to 'Edit Shop', edit_shop_path %>
   <%= link_to 'Remove Shop', @shop, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
 </div>
+
+<h3><%= @latitude %></h3>
+<h3><%= @longitude %></h3>

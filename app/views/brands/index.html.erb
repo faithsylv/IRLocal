@@ -1,0 +1,7 @@
+<h2>All Brands</h2>
+
+<% @brands.each do |brand| %>
+
+<%= link_to brand.name, brand, :class => 'brand index' %>
+
+<% end %>
