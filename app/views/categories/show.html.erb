@@ -1,8 +1,8 @@
 <h2><%= @category.name %></h2>
 
-<%= cl_image_path (@category.image), :class => 'category feature' %>
-
-<div style='background-image: url(<%= cl_image_path (@category.image) %>)', class='category feature'></div>
+<% if @category.image.present? %>
+  <%= cl_image_tag (@category.image), :class => 'category feature' %>
+<% end %>
 
 Shops:
 <% @category.shops.each do |shop| %>

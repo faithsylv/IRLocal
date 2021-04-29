@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'bootstrap'
+
 gem 'jquery-rails'
 
 #allow multi-search of database - can add feature at later stage, not currently incorporated

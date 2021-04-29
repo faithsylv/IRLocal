@@ -1,4 +1,4 @@
-<%= form_for @brand, :html => {:class => 'form brand'} do |f|%>
+<%= form_for @brand, :html => {:class => 'form brand', :multipart => true} do |f|%>
 
 <table>
 
@@ -8,13 +8,15 @@
   </tr>
 
   <tr>
-    <td><%= f.label :image %></td>
-    <td><%= f.text_field :image, :class => "form_input brand" %></td>
-  </tr>
-  <tr>
     <td><%= f.label :logo %></td>
-    <td><%= f.text_field :logo, :class => "form_input brand" %></td>
+    <td><%= f.cl_image_upload :logo, :class => "form_input brand" %></td>
   </tr>
+
+  <tr>
+    <td><%= f.label :images %></td>
+    <td><%= f.file_field :images, :multiple => true, :class => "form_input brand" %></td>
+  </tr>
+
   <tr>
     <td><%= f.label :description %></td>
     <td><%= f.text_area :description, :class => "form_input brand text_area" %></td>

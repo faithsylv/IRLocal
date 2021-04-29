@@ -5,8 +5,6 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find params[:id]
-    @latitude = @shop.latitude
-    @longitude = @shop.longitude
   end
 
   def new
@@ -15,13 +13,19 @@ class ShopsController < ApplicationController
 
   def create
     shop = Shop.create shop_params
-
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       shop.logo = req["public_id"]
-      shop.image = req["public_id"]
       shop.save
     end
+
+    if params[:shop][:images].present?
+      params[:shop][:images].each do |image|
+        req = Cloudinary::Uploader.upload image
+        shop.images << req["public_id"]
+      end
+    end
+    shop.save
 
     redirect_to shop
   end
@@ -35,8 +39,16 @@ class ShopsController < ApplicationController
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       shop.logo = req["public_id"]
-      shop.image = req["public_id"]
     end
+
+    if params[:shop][:images].present?
+      shop.images=[]
+      params[:shop][:images].each do |image|
+        req = Cloudinary::Uploader.upload image
+        shop.images << req["public_id"]
+      end
+    end
+
     shop.update_attributes (shop_params)
     shop.save
     redirect_to shop

@@ -54,8 +54,8 @@
     </tr>
 
     <tr>
-      <td><%= f.label :image %></td>
-      <td><%= f.cl_image_upload :image, :class => "form_input shop" %></td>
+      <td><%= f.label :images %></td>
+      <td><%= f.file_field :images, :multiple => true, :class => "form_input shop" %></td>
     </tr>
 
     <tr>

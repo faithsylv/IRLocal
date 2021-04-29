@@ -14,6 +14,18 @@ class BrandsController < ApplicationController
 
   def create
     brand = Brand.create brand_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      brand.logo = req["public_id"]
+      brand.save
+    end
+    if params[:brand][:images].present?
+      params[:brand][:images].each do |image|
+        req = Cloudinary::Uploader.upload image
+        brand.images << req["public_id"]
+      end
+    end
+    brand.save
     redirect_to brand
   end
 
@@ -23,7 +35,21 @@ class BrandsController < ApplicationController
 
   def update
     brand = Brand.find params[:id]
-    brand.update brand_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      brand.logo = req["public_id"]
+    end
+
+    if params[:brand][:images].present?
+      brand.images=[]
+      params[:brand][:images].each do |image|
+        req = Cloudinary::Uploader.upload image
+        brand.images << req["public_id"]
+      end
+    end
+
+    brand.update_attributes brand_params
+    brand.save
     redirect_to brand
   end
 
@@ -35,7 +61,7 @@ class BrandsController < ApplicationController
 
   private
   def brand_params
-    params.require(:brand).permit(:name,  :logo, :description, :established, :image)
+    params.require(:brand).permit(:name, :description, :established)
   end
 
 end
