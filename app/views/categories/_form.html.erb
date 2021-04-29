@@ -1,6 +1,6 @@
-<%= form_for @category, :html => {:class => 'form category'} do |f|%>
+<%= form_for @category, :html => {:class => 'form category', :multipart => true} do |f|%>
 
-<table>
+  <table>
 
   <tr>
     <td><%= f.label :name %></td>
@@ -9,7 +9,7 @@
 
   <tr>
     <td><%= f.label :image %></td>
-    <td><%= f.text_field :image, :class => "form_input category" %></td>
+    <td><%= f.cl_image_upload :image, :class => "form_input category" %></td>
   </tr>
 
 </table>

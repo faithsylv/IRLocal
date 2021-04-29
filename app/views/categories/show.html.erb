@@ -1,5 +1,9 @@
 <h2><%= @category.name %></h2>
 
+<%= cl_image_path (@category.image), :class => 'category feature' %>
+
+<div style='background-image: url(<%= cl_image_path (@category.image) %>)', class='category feature'></div>
+
 Shops:
 <% @category.shops.each do |shop| %>
   <%= link_to shop.name, shop %>

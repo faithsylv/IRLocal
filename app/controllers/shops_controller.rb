@@ -15,6 +15,14 @@ class ShopsController < ApplicationController
 
   def create
     shop = Shop.create shop_params
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      shop.logo = req["public_id"]
+      shop.image = req["public_id"]
+      shop.save
+    end
+
     redirect_to shop
   end
 
@@ -24,7 +32,13 @@ class ShopsController < ApplicationController
 
   def update
     shop = Shop.find params[:id]
-    shop.update shop_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      shop.logo = req["public_id"]
+      shop.image = req["public_id"]
+    end
+    shop.update_attributes (shop_params)
+    shop.save
     redirect_to shop
   end
 
@@ -36,7 +50,7 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :logo, :tagline, :description, :founders, :established, :website, :image, :address, :category_ids => [], :brand_ids => [])
+    params.require(:shop).permit(:name, :tagline, :description, :founders, :established, :website, :address, :category_ids => [], :brand_ids => [])
   end
 
 end

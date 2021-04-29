@@ -6,6 +6,9 @@
 
 <p><%= @shop.address %></p>
 
+<%= cl_image_tag (@shop.logo), :class => 'shop logo'%>
+<%= cl_image_tag (@shop.image), :class => 'shop feature'%>
+
 <h3>Goods Sold:</h3>
 <% @shop.categories.each do |category|  %>
   <%= link_to category.name, category %>

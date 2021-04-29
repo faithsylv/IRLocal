@@ -6,7 +6,6 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find params[:id]
-    # raise 'hell'
   end
 
   def new
@@ -15,6 +14,13 @@ class CategoriesController < ApplicationController
 
   def create
     category = Category.create category_params
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      category.image = req["public_id"]
+      category.save
+    end
+
     redirect_to category
   end
 
@@ -24,7 +30,14 @@ class CategoriesController < ApplicationController
 
   def update
     category = Category.find params[:id]
-    category.update category_params
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      category.image = req["public_id"]
+    end
+
+    category.update_attributes (category_params)
+    category.save
     redirect_to category
   end
 
@@ -36,7 +49,7 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-    params.require(:category).permit(:name, :image)
+    params.require(:category).permit(:name)
   end
 
 end

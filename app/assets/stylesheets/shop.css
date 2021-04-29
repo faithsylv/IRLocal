@@ -55,7 +55,7 @@ a:hover {
 }
 
 #map {
-  height: 500px;
+  height: 500px; 
   width: 500px;
   margin: 0 auto;
 }
@@ -65,13 +65,17 @@ a:hover {
 }
 
 .labels {
-     margin-top:-3px;
-     padding: 5px;
-     position: absolute;
-    visibility: visible;
-    z-index: 1030;
+  color: green;
+  background-color: rgba(76, 175, 80, 0.1);;
+  font-size: 11px;
+  text-align: center;
+  width: 60px;
 }
 
 .labels:hover {
-    background-color: yellow;
+  background-color: yellow;
+}
+
+.shop.logo {
+  width: 90px;
 }

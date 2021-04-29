@@ -15,7 +15,7 @@
   }
 </script>
 
-<%= form_for @shop, :html => {:class => 'form shop'} do |f| %>
+<%= form_for @shop, :html => {:class => 'form shop', :multipart => true} do |f| %>
   <table>
 
   <tr>
@@ -25,7 +25,7 @@
 
   <tr>
     <td><%= f.label :logo %></td>
-    <td><%= f.text_field :logo,:class => "form_input shop"  %></td>
+    <td><%= f.cl_image_upload :logo,:class => "form_input shop"  %></td>
   </tr>
 
   <tr>
@@ -55,12 +55,12 @@
 
     <tr>
       <td><%= f.label :image %></td>
-      <td><%= f.text_field :image, :class => "form_input shop" %></td>
+      <td><%= f.cl_image_upload :image, :class => "form_input shop" %></td>
     </tr>
 
     <tr>
       <td><%= f.label :address %></td>
-      <td><%= f.text_field :address, :class => "form_input shop", :id => 'autocomplete', :placeholder => 'Enter Address' %></td>
+      <td><%= f.text_field :address, :class => "form_input shop", :id => 'autocomplete', :placeholder => 'Enter Address', :required => true %></td>
     </tr>
 
     <tr>
