@@ -2,6 +2,8 @@
 
 <p class='shop-tagline shop-content'><%= @shop.tagline %></p>
 
+<%= cl_image_tag (@shop.logo), :class => 'shop logo'%>
+
 <p class='shop-content'><%= @shop.address %></p>
 
 <p class='shop-content'> <%= link_to "Click here to visit #{@shop.name}'s website", @shop.website, :class => 'website-link'%></p>
@@ -36,8 +38,6 @@
 <p class='shop-content'><%= @shop.description %></p>
 
 <hr>
-
-<%= cl_image_tag (@shop.logo), :class => 'shop logo'%>
 
 <h3 class='shop-content'>Goods Sold:</h3>
 <% @shop.categories.each do |category|  %>
