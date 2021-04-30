@@ -1,6 +1,6 @@
 <h2><%= @brand.name %></h2>
-<%= cl_image_tag (@brand.logo), :class => 'brand logo'%>
 
+<%= cl_image_tag (@brand.logo), :class => 'brand logo'%>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -24,6 +24,12 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+<hr>
+
+<p class='shop-content'><%= @shop.description %></p>
+
+<hr>
 
 <h3>Shops:</h3>
 <% @brand.shops.each do |shop| %>
