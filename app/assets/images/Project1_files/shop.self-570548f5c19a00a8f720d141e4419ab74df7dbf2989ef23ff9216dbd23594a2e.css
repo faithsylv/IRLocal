@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&display=swap');
 
 body {
   text-align: center;
-  font-family: 'Shippori Mincho', serif;
+  font-family:'Montserrat', sans-serif;
   color: #333232;
-  background: url(/assets/Background2.png);
+}
+
+body::after {
+  background: url(/assets/Background.jpeg);
   background-size: cover;
   background-position: center;
+  content: "";
+  opacity: 0.8;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  width:100vw;
+  height: 100vh;
 }
 
 .container {
@@ -29,8 +42,9 @@ body {
 .nav_div {
   background-color: #eae5e5;
   padding: 5px;
-  border-top: 3px double black;
-  border-bottom: 3px double black;
+  border-style: double;
+  border-top: 0.5px;
+  border-bottom: 0.5px;
 }
 
 nav a {
@@ -88,7 +102,6 @@ width: 145px;
 a {
   text-decoration: none;
   color: #333232;
-  padding: 10px;
 }
 
 a:hover {
@@ -112,34 +125,29 @@ a:hover {
   margin: 0 auto;
 }
 
-.form-inline label {
-  padding-right: 10px;
-  font-size: 24px;
+.form-control {
+  padding-right:
 }
 
-.feature-store {
+.feature_store {
   display: inline-block;
-  height: 200px;
-  width: 200px;
 }
 
-.feature-store img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border: 0.3px solid #bbb8b8;
-}
 
 .labels {
-  color: #6d6969;
-  background-color: #fffffffa;
+  color: green;
+  background-color: rgba(76, 175, 80, 0.1);;
   font-size: 11px;
   text-align: center;
   width: 60px;
 }
 
+.labels:hover {
+  background-color: yellow;
+}
+
 .shop.logo {
-  width: 100px;
+  width: 50px;
 }
 
 .category.feature {
@@ -154,58 +162,6 @@ a:hover {
   display: inline-block;
 }
 
-.form-input {
-  text-align: right;
-}
-
-.cloudinary-fileupload {
-  width: 228px;
-}
-
-.stores-month {
-  margin: 50px;
-}
-
-.stores-month.header {
-  margin-top: 50px;
-}
-
-.index-header {
-  margin: 25px 0px;
-}
-
-.dropdown-toggle.btn {
-  vertical-align: inherit !important;
-}
-
-.index-link:hover {
-color: #bbb8b8;
-}
-
-.form-input {
-  width: 350px;
-}
-
-h2 {
-  margin: 25px 0px;
-}
-
-.checkbox-area {
-  margin: 5px;
-}
-
-.website-link:hover {
-  color: #bbb8b8;
-}
-
-.shop-tagline {
-  font-style: italic;
-}
-
-.shop-content {
-  margin: 25px 0px;
-}
-
-hr {
-  margin: 35px 0px;
+.btn-secondary {
+  color: #333232 !important;
 }

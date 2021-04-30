@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
+    @shop1 = Shop.find_by name: 'Duke & D HOME'
+    @shop2 = Shop.find_by name: 'The Frock Exchange'
+    @shop3 = Shop.find_by name: 'Chinaclay'
   end
 
   def search

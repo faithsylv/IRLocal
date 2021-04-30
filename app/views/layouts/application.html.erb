@@ -17,18 +17,32 @@
 
   <body>
     <div class = 'header'>
-      <%= link_to (image_tag '/assets/icon.png', :class =>'home_logo'), root_path %>
+      <h1 id='web_title'>IRLocal</h1>
+      <p class = 'subtitle'>LIVE LOCAL | LOVE LOCAL</p>
 
-      <nav class = 'main_nav'>
-        <%= link_to 'Our Shops', shops_path %>
-        <%= link_to 'All Categories', categories_path %>
-        <%= link_to 'All Brands', brands_path %>
-        <%= link_to 'Add a Shop', new_shop_path %>
-        <%= link_to 'Add a Category', new_category_path %>
-        <%= link_to 'Add a Brand', new_brand_path %>
-      </nav>
+      <div class = 'nav_div'>
+        <%= link_to (image_tag '/assets/icon.png', :class =>'home_logo'), root_path %>
+
+        <nav class = 'main_nav'>
+          <%= link_to 'SHOPS', shops_path %>
+          <%= link_to 'CATEGORIES', categories_path %>
+          <%= link_to 'BRANDS', brands_path %>
+          <div class="dropdown">
+            <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ADD YOUR LOCAL
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <%= link_to '+ SHOP', new_shop_path, :class => "dropdown-item" %>
+              <%= link_to '+ CATEGORY', new_category_path, :class => "dropdown-item" %>
+              <%= link_to '+ BRAND', new_brand_path, :class => "dropdown-item" %>
+            </div>
+          </div>
+        </nav>
+      </div>
     </div>
 
-    <%= yield %>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>

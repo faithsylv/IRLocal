@@ -4,9 +4,9 @@
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  <% @brand.images.each_index do |i| %>
+    <li data-target="#carouselExampleIndicators" data-slide-to=i.to_s class=<%= 'active'if i == 0%>></li>
+  <% end %>
   </ol>
   <div class="carousel-inner" role="listbox" style=" width:100%; height: 500px !important;">
     <% @brand.images.each.with_index do |image, i| %>

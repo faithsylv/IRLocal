@@ -1,7 +1,7 @@
-<h2>All Brands</h2>
+<h2 class = 'index-header'>All Brands</h2>
 
 <% @brands.each do |brand| %>
 
-<%= link_to brand.name, brand, :class => 'brand index' %>
+<p><%= link_to brand.name, brand, :class => 'brand index-link' %></p>
 
 <% end %>

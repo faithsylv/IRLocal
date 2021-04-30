@@ -1,5 +1,5 @@
-<h2>All Shops</h2>
+<h2 class = 'index-header'>All Shops</h2>
 
 <% @shops.each do |shop| %>
-  <p><%= link_to shop.name, shop %></p>
+  <p><%= link_to shop.name, shop, :class => 'shop index-link' %></p>
 <% end %>

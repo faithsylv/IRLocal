@@ -1,7 +1,7 @@
-<h2>All Categories</h2>
+<h2 class = 'index-header'>All Categories</h2>
 
 <% @categories.each do |category| %>
 
-  <%= link_to category.name, category, :class => 'category index' %>
+  <p><%= link_to category.name, category, :class => 'category index-link' %>
 
 <% end %>

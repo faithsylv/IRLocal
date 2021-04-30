@@ -1,8 +1,30 @@
-<h1>IRLocal</h1>
-<p>Back to Basics</p>
+<nav class = 'home_search navbar navbar-light'>
+  <%= form_tag pages_result_path, :method => 'get', :class => 'form-inline' do %>
+    <%= label :query, "Find your local:" %>
+    <%= search_field_tag :query, 'Search', :class => 'form-control mr-sm-2', :value => ''%>
+    <%= submit_tag "Let's go!", :class => 'btn btn-outline-success my-2 my-sm-0'%>
+  <% end %>
+</nav>
 
-<%= form_tag pages_result_path, :method => 'get', :class => 'home_search' do %>
-  <%= label :query, "Search for:" %>
-  <%= search_field_tag :query %>
-  <%= submit_tag "Search"%>
-<% end %>
+<p id = 'home_intro'> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam modi quisquam, debitis ad, quos harum excepturi cum minima dolores at in, vel ea minus! Perspiciatis excepturi nulla necessitatibus dolorem ad.</p>
+
+<hr>
+
+<h3 class = 'stores-month header'>STORES OF THE MONTH</h3>
+
+<div class = 'stores-month'>
+  <div class = 'feature-store'>
+    <h4><%= @shop1.name %></h4>
+      <%= link_to cl_image_tag(@shop1.logo), @shop1 %>
+  </div>
+
+  <div class = 'feature-store'>
+    <h4><%= @shop2.name %></h4>
+    <%= link_to cl_image_tag(@shop2.logo), @shop1 %>
+  </div>
+
+  <div class = 'feature-store'>
+    <h4><%= @shop3.name %></h4>
+    <%= link_to cl_image_tag(@shop3.logo), @shop1 %>
+  </div>
+</div>
