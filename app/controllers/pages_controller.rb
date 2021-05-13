@@ -20,12 +20,20 @@ class PagesController < ApplicationController
         @header = "Stores:"
         @shops = Shop.where("name ilike ?", "%#{name}%")
       else
-        @return_text = "Sorry, we couldn't find a store that sells that category or brand."
+        @header = "Sorry, we couldn't find a store that sells that category or brand."
         @shops = Shop.all
       end
+    else
+        @header = "All Stores:"
+        @shops = Shop.all
     end
 
     gon.shops = @shops
+    @IP = get_remote_ip()
+    @userAddress = Geocoder.search(@IP)
+
+    p gon.latitude = @userAddress.first.coordinates[0]
+    p gon.longitude = @userAddress.first.coordinates[1]
 
   end
 

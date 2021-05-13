@@ -18,35 +18,35 @@
 <%= form_for @shop, :html => {:class => 'form shop', :multipart => true} do |f| %>
   <table>
 
-  <tr>
-    <td><%= f.label :name %>
-    <td class='form-input'><%= f.text_field :name, :class => "form_input shop", :required => true %>
-  </tr>
+    <tr>
+      <td><%= f.label :name %>
+      <td class='form-input'><%= f.text_field :name, :class => "form_input shop", :required => true %>
+    </tr>
 
-  <tr>
-    <td><%= f.label :logo %></td>
-    <td class='form-input'><%= f.cl_image_upload :logo,:class => "form_input shop"  %></td>
-  </tr>
+    <tr>
+      <td><%= f.label :logo %></td>
+      <td class='form-input'><%= f.cl_image_upload :logo,:class => "form_input shop"  %></td>
+    </tr>
 
-  <tr>
-    <td><%= f.label :tagline %></td>
-    <td class='form-input'><%= f.text_field :tagline, :class => "form_input shop" %></td>
-  </tr>
+    <tr>
+      <td><%= f.label :tagline %></td>
+      <td class='form-input'><%= f.text_field :tagline, :class => "form_input shop" %></td>
+    </tr>
 
-  <tr>
-    <td><%= f.label :description %></td>
-    <td class='form-input'><%= f.text_area :description, :class => "form_input shop text_area" %></td>
-  </tr>
+    <tr>
+      <td><%= f.label :description %></td>
+      <td class='form-input'><%= f.text_area :description, :class => "form_input shop text_area" %></td>
+    </tr>
 
-  <tr>
-    <td><%= f.label :founders %></td>
-    <td class='form-input'><%= f.text_field :founders, :class => "form_input shop" %></td>
-  </tr>
+    <tr>
+      <td><%= f.label :founders %></td>
+      <td class='form-input'><%= f.text_field :founders, :class => "form_input shop" %></td>
+    </tr>
 
-  <tr>
-    <td><%= f.label :established %></td>
-    <td class='form-input'><%= f.number_field :established, :class => "form_input shop" %></td>
-  </tr>
+    <tr>
+      <td><%= f.label :established %></td>
+      <td class='form-input'><%= f.number_field :established, :class => "form_input shop" %></td>
+    </tr>
 
     <tr>
       <td><%= f.label :website %></td>

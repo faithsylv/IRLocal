@@ -103,7 +103,6 @@ a:hover {
 }
 
 .home_search {
-  padding-top: 50px;
   text-align: center;
   margin: 0 auto;
 }
@@ -212,4 +211,8 @@ h2 {
 
 hr {
   margin: 35px 0px;
+}
+
+.intro_para {
+  margin-top: 35px;
 }
