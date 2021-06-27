@@ -1,3 +1,302 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@100;200;300;400&family=Meddon&family=Nothing+You+Could+Do&display=swap');
+
+$main-dark: #a8c0ad;
+$nude: #f6f1ed;
+
+$title-font: 'DM Serif Display', serif;
+$main-font: 'Jost', sans-serif;
+$cursive: 'Nothing You Could Do', cursive;
+
+body {
+  text-align: center;
+  font-family: $main-font;
+  background-color: white;
+  color: black;
+}
+
+
+.subtitle {
+  padding: 20px 0px;
+  font-size: 30px;
+}
+
+.nav-div {
+  background-color: $main-dark;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 15vh;
+}
+
+.web-title {
+  font-family: $title-font;
+  font-size: 65px;
+  text-align: left;
+  display: flex;
+  padding-bottom: 0px;
+  padding-left: 40px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 35px;
+  padding-bottom: 8px;
+}
+
+nav a {
+  padding: 10px;
+}
+
+.page-container {
+  min-height: 70vh;
+}
+
+.home-top {
+  margin: 90px auto;
+}
+
+.home-bottom {
+  background-color: $nude;
+  width: 100vw;
+  padding: 40px;
+}
+
+.footer {
+  border-top: 1px solid black;
+}
+
+#home_intro {
+  padding: 35px 80px;
+  text-align: justify;
+}
+
+.intro-para {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.search-prompt {
+  font-size: 45px;
+  font-family: $cursive;
+  margin-top: 25px;
+  margin-bottom: 45px;
+}
+
+.search-button {
+  border-radius: 30px;
+  width: 100px;
+  height: 65px;
+  border: 1px solid $main-dark;
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
+.search-button:hover {
+  color: white;
+  background-color: $main-dark;
+}
+
+.form-control {
+  width: 600px !important;
+  height: 65px;
+  background-color: $nude;
+  border-radius: 40px;
+  font-size: 25px;
+  padding-left: 30px;
+}
+
+.form-control:focus {
+  border-color: $nude;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #b4a59a;
+}
+
+.form_input {
+float: right;
+margin-left: 20px;
+border-width: 1px;
+}
+
+.text_area {
+width: 145px;
+}
+
+.form table {
+  margin: 0 auto;
+}
+
+.submit {
+  text-align: center;
+  margin: 15px;
+}
+
+.feature-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.feature-div {
+  display: inline-block;
+  width: 250px;
+}
+
+.feature-image {
+  object-fit: cover;
+  width: 250px;
+  height: 500px;
+}
+
+.heading.shop {
+  text-align: center;
+}
+
+.index {
+  display: block;
+}
+
+.home_logo {
+  width: 75px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+.main_nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.header {
+    text-align: center;
+    margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #333232;
+  padding: 10px;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#map {
+  height: 500px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.home_search {
+  text-align: center;
+  margin-left: 89px;
+}
+
+.form-inline {
+  margin: 0 auto;
+}
+
+.form-inline label {
+  padding-right: 10px;
+  font-size: 24px;
+}
+
+.feature-store {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+}
+
+.feature-store img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 0.3px solid #bbb8b8;
+}
+
+.labels {
+  color: #6d6969;
+  background-color: #fffffffa;
+  font-size: 11px;
+  text-align: center;
+  width: 60px;
+}
+
+.shop.logo {
+  width: 100px;
+}
+
+.brand.logo {
+  width: 100px;
+}
+
+.category.feature {
+  height: 400px;
+}
+
+.brand.feature {
+  horizontal-align: middle !important;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.form-input {
+  text-align: right;
+}
+
+.cloudinary-fileupload {
+  width: 228px;
+}
+
+.stores-month {
+  margin-bottom: 50px;
+}
+
+.index-header {
+  margin: 25px 0px;
+}
+
+.dropdown-toggle.btn {
+  vertical-align: inherit !important;
+}
+
+.index-link:hover {
+color: #bbb8b8;
+}
+
+.form-input {
+  width: 350px;
+}
+
+h2 {
+  margin: 25px 0px;
+}
+
+.checkbox-area {
+  margin: 5px;
+}
+
+.website-link:hover {
+  color: #bbb8b8;
+}
+
+.shop-tagline {
+  font-style: italic;
+}
+
+.shop-content {
+  margin: 25px 0px;
+}
+
+hr {
+  margin: 35px 0px;
+}
