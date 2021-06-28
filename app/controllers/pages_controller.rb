@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @shop4 = Shop.find_by name: 'Odgers & McClelland Exchange Stores'
   end
 
+  def about
+  end
+
   def search
     if params[:query].present?
       name = params[:query]

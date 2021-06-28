@@ -1,12 +1,10 @@
 
-
-<!-- <p class = 'intro-para'>In an era of monopolies, price comparison, and online shopping, it can be hard to shop local. But the artisinal world is making a comeback - it's time to re-discover your high street and support your neighbors. To find your local treasures, search below by brand, category, or shop.</p> -->
 <div class='home-top'>
   <p class='search-prompt'>Find independent, local shops near you</p>
   <nav class = 'home_search navbar navbar-light'>
     <%= form_tag pages_result_path, :method => 'get', :class => 'form-inline' do %>
       <%= search_field_tag :query, 'Search', :class => 'form-control mr-sm-2', :value => '', :placeholder => '👀'%>
-      <%= submit_tag "Let's go!", :class => 'search-button'%>
+      <%= submit_tag "DISCOVER", :class => 'search-button'%>
     <% end %>
   </nav>
   <div class="dropdown">
@@ -25,26 +23,32 @@
   <h3 class = 'stores-month header'>FEATURED SHOPS</h3>
 
   <div class="feature-container">
-    <div class="feature1 feature-div">
-      <%= cl_image_tag (@shop1.images[0]), :class => 'home feature-image'%>
-       <h5><%= @shop1.name %></h5>
-       <p><%= @shop1.tagline %></p>
-     </div>
-    <div class="feature2 feature-div">
-      <%= cl_image_tag (@shop2.images[0]), :class => 'home feature-image'%>
-       <h5><%= @shop2.name %></h5>
-       <p><%= @shop2.tagline %></p>
-     </div>
-    <div class="feature3 feature-div">
-      <%= cl_image_tag (@shop3.images[0]), :class => 'home feature-image'%>
-       <h5><%= @shop3.name %></h5>
-       <p><%= @shop3.tagline %></p>
-     </div>
-    <div class="feature4 feature-div">
-      <%= cl_image_tag (@shop4.images[0]), :class => 'home feature-image'%>
-       <h5><%= @shop4.name %></h5>
-       <p><%= @shop4.tagline %></p>
-     </div>
+    <a href='/shops/<%= @shop1.id %>' class='feature-link'>
+      <div class="feature1 feature-div">
+        <%= cl_image_tag (@shop1.images[1]), :class => 'home feature-image'%>
+        <h5 class='feature-name'><%= @shop1.name %></h5>
+        <p class='feature-tagline'><%= @shop1.tagline %></p>
+      </div>
+    </a>
+     <a href='/shops/<%= @shop2.id %>' class='feature-link'>
+      <div class="feature2 feature-div">
+        <%= cl_image_tag (@shop2.images[2]), :class => 'home feature-image'%>
+        <h5 class='feature-name'><%= @shop2.name %></h5>
+        <p class='feature-tagline'><%= @shop2.tagline %></p>
+      </div>
+    </a>
+    <a href='/shops/<%= @shop3.id %>' class='feature-link'>
+      <div class="feature3 feature-div">
+        <%= cl_image_tag (@shop3.images[0]), :class => 'home feature-image'%>
+        <h5 class='feature-name'><%= @shop3.name %></h5>
+        <p class='feature-tagline'><%= @shop3.tagline %></p>
+      </div>
+    <a href='/shops/<%= @shop4.id %>' class='feature-link'>
+      <div class="feature4 feature-div">
+        <%= cl_image_tag (@shop4.images[0]), :class => 'home feature-image'%>
+        <h5 class='feature-name'><%= @shop4.name %></h5>
+        <p class='feature-tagline'><%= @shop4.tagline %></p>
+      </div>
    </div>
 
 </div>

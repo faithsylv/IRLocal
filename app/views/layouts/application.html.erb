@@ -20,10 +20,10 @@
 
       <div class = 'nav-div'>
         <%# link_to (image_tag '/assets/icon.png', :class =>'home_logo'), root_path %>
-        <%= link_to 'IRLocal', root_path, :class => 'web-title' %>
+        <div class='web-title'><%= link_to 'IRLocal', root_path %></div>
 
         <nav class = 'main-nav'>
-          <%= link_to 'ABOUT' %>
+          <%= link_to 'ABOUT', pages_about_path %>
           <%= link_to 'SHOPS', shops_path %>
           <%= link_to 'BRANDS', brands_path %>
           <%= link_to 'CATEGORIES', categories_path %>
@@ -32,12 +32,12 @@
       </div>
     </div>
 
-    <div class="page-container">  
+    <div class="page-container">
     <%= yield %>
     </div>
 
     <div class='footer'>
-      <p class = 'subtitle'>LIVE LOCAL | LOVE LOCAL</p>
+      <p class = 'subtitle'>Live Local | Love Local</p>
     </div>
   </body>
 </html>
