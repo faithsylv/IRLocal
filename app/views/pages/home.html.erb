@@ -3,7 +3,7 @@
   <p class='search-prompt'>Find independent, local shops near you</p>
   <nav class = 'home_search navbar navbar-light'>
     <%= form_tag pages_result_path, :method => 'get', :class => 'form-inline' do %>
-      <%= search_field_tag :query, 'Search', :class => 'form-control mr-sm-2', :value => '', :placeholder => '👀'%>
+      <%= search_field_tag :query, 'Search', :class => 'form-control mr-sm-2', :value => '', :placeholder => 'Search brands, categories, or shops'%>
       <%= submit_tag "DISCOVER", :class => 'search-button'%>
     <% end %>
   </nav>
@@ -32,7 +32,7 @@
     </a>
      <a href='/shops/<%= @shop2.id %>' class='feature-link'>
       <div class="feature2 feature-div">
-        <%= cl_image_tag (@shop2.images[2]), :class => 'home feature-image'%>
+        <%= cl_image_tag (@shop2.images[3]), :class => 'home feature-image'%>
         <h5 class='feature-name'><%= @shop2.name %></h5>
         <p class='feature-tagline'><%= @shop2.tagline %></p>
       </div>
@@ -45,7 +45,7 @@
       </div>
     <a href='/shops/<%= @shop4.id %>' class='feature-link'>
       <div class="feature4 feature-div">
-        <%= cl_image_tag (@shop4.images[0]), :class => 'home feature-image'%>
+        <%= cl_image_tag (@shop4.images[2]), :class => 'home feature-image'%>
         <h5 class='feature-name'><%= @shop4.name %></h5>
         <p class='feature-tagline'><%= @shop4.tagline %></p>
       </div>
